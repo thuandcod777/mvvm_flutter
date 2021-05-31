@@ -4,6 +4,7 @@ import 'package:mvvm_flutter/core/constants/app/app_constans.dart';
 import 'package:mvvm_flutter/core/init/lang/language_manager.dart';
 import 'package:mvvm_flutter/core/init/navigation/navigation_service.dart';
 import 'package:mvvm_flutter/core/init/navigation/navigator_route.dart';
+import 'package:mvvm_flutter/core/init/notifer/provider_list.dart';
 import 'package:mvvm_flutter/core/init/notifer/theme_notifer.dart';
 import 'package:mvvm_flutter/view/authenticate/test/view/test_view.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [],
+      providers: [...ApplicationProvider.instance.dependItems],
       child: MaterialApp(
         theme: Provider.of<ThemeNotifer>(context, listen: false).currentTheme,
         home: TestView(),
