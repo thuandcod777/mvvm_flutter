@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mvvm_flutter/core/base/state/base_state.dart';
 import 'package:mvvm_flutter/core/base/widget/base_widget.dart';
+import 'package:mvvm_flutter/core/constants/enums/locale_keys_enum.dart';
+import 'package:mvvm_flutter/core/init/cache/locale_manager.dart';
 import 'package:mvvm_flutter/core/init/lang/language_manager.dart';
 import 'package:mvvm_flutter/core/init/lang/locale_keys.g.dart';
 import 'package:mvvm_flutter/view/authenticate/test/viewmodel/test_view_model.dart';
 import 'package:mvvm_flutter/core/extension/string_extension.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:mvvm_flutter/core/constants/enums/locale_keys_enum.dart';
 
 class TestView extends StatefulWidget {
   @override
@@ -26,19 +29,25 @@ class _TestViewState extends BaseState<TestView> {
   }
 
   Widget get scraffolBody => Scaffold(
-        appBar: AppBar(
-          title: Text(LocaleKeys.welcome.locale),
-          actions: [
-            IconButton(
-                icon: Icon(Icons.change_history),
-                onPressed: () {
-                  context.locale = LanguageManager.instance.enLocale;
-                })
-          ],
-        ),
+        appBar: appBar(),
         floatingActionButton: floatingActionButton(),
         body: textNumber,
       );
+
+  AppBar appBar() {
+    return AppBar(
+      leading:
+          Text(LocaleManager.instance.getStringValue(PreferencesKeys.TOKEN)),
+      title: Text(LocaleKeys.welcome.locale),
+      actions: [
+        IconButton(
+            icon: Icon(Icons.change_history),
+            onPressed: () {
+              context.locale = LanguageManager.instance.enLocale;
+            })
+      ],
+    );
+  }
 
   Widget get textNumber {
     return Observer(builder: (context) => Text(viewModel.number.toString()));
