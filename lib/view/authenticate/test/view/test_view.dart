@@ -38,15 +38,19 @@ class _TestViewState extends BaseState<TestView> {
     return AppBar(
       leading:
           Text(LocaleManager.instance.getStringValue(PreferencesKeys.TOKEN)),
-      title: Text(LocaleKeys.welcome.locale),
-      actions: [
-        IconButton(
-            icon: Icon(Icons.change_history),
-            onPressed: () {
-              context.locale = LanguageManager.instance.enLocale;
-            })
-      ],
+      title: textWelcomeWidget(),
+      actions: [iconButtonChangeTheme()],
     );
+  }
+
+  Text textWelcomeWidget() => Text(LocaleKeys.welcome.locale);
+
+  IconButton iconButtonChangeTheme() {
+    return IconButton(
+        icon: Icon(Icons.change_history),
+        onPressed: () {
+          context.locale = LanguageManager.instance.enLocale;
+        });
   }
 
   Widget get textNumber {
@@ -55,4 +59,10 @@ class _TestViewState extends BaseState<TestView> {
 
   FloatingActionButton floatingActionButton() =>
       FloatingActionButton(onPressed: () => viewModel!.incrementNumber());
+}
+
+extension _FormArea on _TestViewState {
+  TextFormField get mailField => TextFormField(
+        validator: (value) => value!.isValidEmail,
+      );
 }
