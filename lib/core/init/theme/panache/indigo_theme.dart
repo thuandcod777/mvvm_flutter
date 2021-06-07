@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-const String FONT_FAMMILY = "Poppins";
 final ThemeData indigoTheme = ThemeData(
   primarySwatch: Colors.indigo,
   brightness: Brightness.light,

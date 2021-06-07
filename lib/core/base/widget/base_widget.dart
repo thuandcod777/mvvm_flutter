@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobx/mobx.dart';
 
 class BaseView<T> extends StatefulWidget {
   final Widget Function(BuildContext context, T value) onPageBuilder;
@@ -14,14 +15,17 @@ class BaseView<T> extends StatefulWidget {
       this.onDisponse})
       : super(key: key);
   @override
-  State<StatefulWidget> createState() => _BaseViewState();
+  _BaseViewState<T> createState() => _BaseViewState<T>();
 }
 
-class _BaseViewState extends State<BaseView> {
+class _BaseViewState<T> extends State<BaseView<T>> {
+  late T model;
   @override
   void initState() {
+    model = widget.viewModel;
+    widget.onModelReady(model);
+
     super.initState();
-    if (widget.onModelReady != null) widget.onModelReady(widget.viewModel);
   }
 
   @override
