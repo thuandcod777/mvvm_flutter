@@ -1,1 +1,1 @@
-enum PpreferencesKeys { TOKEN }
+enum PreferencesKeys { TOKEN }

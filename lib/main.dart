@@ -7,11 +7,13 @@ import 'package:mvvm_flutter/core/init/navigation/navigation_service.dart';
 import 'package:mvvm_flutter/core/init/navigation/navigator_route.dart';
 import 'package:mvvm_flutter/core/init/notifer/provider_list.dart';
 import 'package:mvvm_flutter/core/init/notifer/theme_notifer.dart';
+import 'package:mvvm_flutter/view/authenticate/login/view/login_view.dart';
+import 'package:mvvm_flutter/view/authenticate/onboard/view/on_board_view.dart';
 import 'package:mvvm_flutter/view/authenticate/test/view/test_view.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  LocaleManager.preferencesInit();
+void main() async {
+  await _init();
   runApp(MultiProvider(
     providers: [...ApplicationProvider.instance.dependItems],
     child: EasyLocalization(
@@ -22,13 +24,20 @@ void main() {
   ));
 }
 
+Future<void> _init() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocaleManager.preferencesInit();
+  await EasyLocalization.ensureInitialized();
+}
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeNotifer>(context, listen: false).currentTheme,
-      home: TestView(),
+      home: OnBoardView(),
       onGenerateRoute: NavigatorRoute.instance.generateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,
     );
