@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NotFoundNavigation extends StatelessWidget {
+class NotFoundNavigationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

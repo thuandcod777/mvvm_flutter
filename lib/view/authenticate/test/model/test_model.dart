@@ -11,9 +11,10 @@ class TestModel extends BaseModel {
   bool? comleted;
 
   TestModel({this.userId, this.id, this.title, this.comleted});
+
   @override
   Map<String, dynamic> toJson() => _$TestModelToJson(this);
 
   @override
-  fromJson(Map<String, Object> json) => _$TestModelFromJson(json);
+  fromJson(Map<String, dynamic> json) => _$TestModelFromJson(json);
 }
