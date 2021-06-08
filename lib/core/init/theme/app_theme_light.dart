@@ -40,7 +40,7 @@ class AppThemeLight extends AppTheme with ILightTheme {
         primary: colorSchemeLight.black,
         primaryVariant: Colors.white,
         secondary: Colors.green,
-        secondaryVariant: Colors.green.shade200,
+        secondaryVariant: colorSchemeLight.azune,
         surface: Colors.blue,
         background: Colors.white,
         error: Colors.red.shade900,

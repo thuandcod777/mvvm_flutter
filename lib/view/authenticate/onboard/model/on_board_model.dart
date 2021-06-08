@@ -1,4 +1,7 @@
 class OnBoardModel {
-  String title;
-  OnBoardModel(this.title);
+  final String title;
+  final String? description;
+  final String? imagePath;
+
+  OnBoardModel(this.title, {this.description, this.imagePath});
 }

@@ -31,6 +31,9 @@ dependencies:
   shared_preferences: ^2.0.6
   dio: ^4.0.0
   json_annotation: ^4.0.1
+  flutter_svg: any
+  auto_size_text: ^3.0.0-nullsafety.0
+
 
 
 
@@ -61,6 +64,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/lang/
+    - assets/svg/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

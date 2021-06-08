@@ -5,8 +5,16 @@ class PostModel extends BaseModel<PostModel> {
   int? id;
   String? title;
   String? body;
+  String? description;
+  String? imagePath;
 
-  PostModel({this.userId, this.id, this.title, this.body});
+  PostModel(
+      {this.userId,
+      this.id,
+      this.title,
+      this.body,
+      this.imagePath,
+      this.description});
 
   @override
   PostModel.fromJson(Map<String, dynamic> json) {
@@ -14,6 +22,8 @@ class PostModel extends BaseModel<PostModel> {
     id = json['id'] as int?;
     title = json['title'] as String?;
     body = json['body'] as String?;
+    imagePath = json['imagePath'] as String?;
+    description = json['description'] as String?;
   }
 
   @override
@@ -23,6 +33,8 @@ class PostModel extends BaseModel<PostModel> {
     data['id'] = id!;
     data['title'] = title!;
     data['body'] = body!;
+    data['imagePath'] = imagePath!;
+    data['description'] = description!;
     return data;
   }
 

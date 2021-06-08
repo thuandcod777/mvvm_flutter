@@ -54,11 +54,11 @@ class _TestViewState extends BaseState<TestView> {
   }
 
   Widget get textNumber {
-    return Observer(builder: (context) => Text(viewModel!.number.toString()));
+    return Observer(builder: (context) => Text(viewModel.number.toString()));
   }
 
   FloatingActionButton floatingActionButton() =>
-      FloatingActionButton(onPressed: () => viewModel!.incrementNumber());
+      FloatingActionButton(onPressed: () => viewModel.incrementNumber());
 }
 
 extension _FormArea on _TestViewState {

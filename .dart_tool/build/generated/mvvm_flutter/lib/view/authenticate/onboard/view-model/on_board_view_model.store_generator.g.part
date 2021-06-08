@@ -5,19 +5,18 @@
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$OnBoardViewModel on _OnBoardViewModelBase, Store {
-  final _$currentPageIndexAtom =
-      Atom(name: '_OnBoardViewModelBase.currentPageIndex');
+  final _$currentIndexAtom = Atom(name: '_OnBoardViewModelBase.currentIndex');
 
   @override
-  int get currentPageIndex {
-    _$currentPageIndexAtom.reportRead();
-    return super.currentPageIndex;
+  int get currentIndex {
+    _$currentIndexAtom.reportRead();
+    return super.currentIndex;
   }
 
   @override
-  set currentPageIndex(int value) {
-    _$currentPageIndexAtom.reportWrite(value, super.currentPageIndex, () {
-      super.currentPageIndex = value;
+  set currentIndex(int value) {
+    _$currentIndexAtom.reportWrite(value, super.currentIndex, () {
+      super.currentIndex = value;
     });
   }
 
@@ -25,11 +24,22 @@ mixin _$OnBoardViewModel on _OnBoardViewModelBase, Store {
       ActionController(name: '_OnBoardViewModelBase');
 
   @override
-  void onPageChanged(int value) {
+  void changeLoading() {
     final _$actionInfo = _$_OnBoardViewModelBaseActionController.startAction(
-        name: '_OnBoardViewModelBase.onPageChanged');
+        name: '_OnBoardViewModelBase.changeLoading');
     try {
-      return super.onPageChanged(value);
+      return super.changeLoading();
+    } finally {
+      _$_OnBoardViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void changeCurrentIndex(int value) {
+    final _$actionInfo = _$_OnBoardViewModelBaseActionController.startAction(
+        name: '_OnBoardViewModelBase.changeCurrentIndex');
+    try {
+      return super.changeCurrentIndex(value);
     } finally {
       _$_OnBoardViewModelBaseActionController.endAction(_$actionInfo);
     }
@@ -38,7 +48,7 @@ mixin _$OnBoardViewModel on _OnBoardViewModelBase, Store {
   @override
   String toString() {
     return '''
-currentPageIndex: ${currentPageIndex}
+currentIndex: ${currentIndex}
     ''';
   }
 }

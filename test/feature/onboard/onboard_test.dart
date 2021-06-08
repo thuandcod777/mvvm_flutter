@@ -22,7 +22,7 @@ main() {
   test("OnBoard Get Models", () async {
     await mockViewModel.onBoardGetModels();
 
-    expect(mockViewModel.onBoardModel, isNotEmpty);
+    expect(mockViewModel.onBoardItems, isNotEmpty);
   });
 
   test("OnBoard Get Service", () async {
@@ -32,23 +32,23 @@ main() {
   });
 
   test("OnBoard On Page Changed", () {
-    mockViewModel.onPageChanged(5);
+    mockViewModel.changeCurrentIndex(5);
 
-    expect(5, mockViewModel.currentPageIndex);
+    expect(5, mockViewModel.currentIndex);
   });
 
   group("Test All", () {
     int index = 00;
     test("onBoard Get Models", () async {
       await mockViewModel.onBoardGetModels();
-      mockViewModel.currentPageIndex = mockViewModel.onBoardModel.length;
-      expect(mockViewModel.onBoardModel, isNotEmpty);
+      mockViewModel.currentIndex = mockViewModel.onBoardItems.length;
+      expect(mockViewModel.onBoardItems, isNotEmpty);
     });
 
     test("onBoard On Page Changed", () {
       //expect(mockViewModel.onBoardModel.length, mockViewModel.currentPageIndex);
-      mockViewModel.onPageChanged(index);
-      expect(index, mockViewModel.currentPageIndex);
+      mockViewModel.changeCurrentIndex(index);
+      expect(index, mockViewModel.currentIndex);
     });
   });
 }
