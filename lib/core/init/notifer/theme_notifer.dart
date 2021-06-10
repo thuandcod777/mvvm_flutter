@@ -3,12 +3,6 @@ import 'package:mvvm_flutter/core/constants/enums/app_theme_enum.dart';
 import 'package:mvvm_flutter/core/init/theme/app_theme_light.dart';
 
 class ThemeNotifer extends ChangeNotifier {
-  /*int value = 5;
-
-  void changeValue() {
-    value++;
-    notifyListeners();
-  }*/
   ThemeData _currentTheme = AppThemeLight.instance.theme;
 
   ThemeData get currentTheme => _currentTheme;

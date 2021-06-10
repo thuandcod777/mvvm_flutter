@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:mvvm_flutter/core/base/model/base_view_model.dart';
 import 'package:mvvm_flutter/core/constants/enums/locale_keys_enum.dart';
-import 'package:mvvm_flutter/core/init/cache/locale_manager.dart';
 import 'package:mvvm_flutter/core/init/lang/locale_keys.g.dart';
 import 'package:mvvm_flutter/core/constants/navigation/navigator_constants.dart';
 import 'package:mvvm_flutter/view/_product/_constants/image_path_svg.dart';

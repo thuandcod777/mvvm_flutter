@@ -284,6 +284,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "logger",
+      "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/logger-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "logging",
       "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/logging-1.0.1",
       "packageUri": "lib/",
@@ -350,8 +356,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "path_provider",
+      "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path_provider_linux",
       "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_provider_macos",
+      "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -418,6 +436,12 @@
     {
       "name": "pubspec_parse",
       "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "sembast",
+      "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/sembast-3.1.0+2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -512,6 +536,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "synchronized",
+      "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0",
       "packageUri": "lib/",
@@ -538,6 +568,12 @@
     {
       "name": "vector_math",
       "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "vexana",
+      "rootUri": "file:///D:/SDK/flutter/.pub-cache/hosted/pub.dartlang.org/vexana-2.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -584,7 +620,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-06-08T03:26:45.820663Z",
+  "generated": "2021-06-10T08:36:49.048404Z",
   "generator": "pub",
   "generatorVersion": "2.12.1"
 }

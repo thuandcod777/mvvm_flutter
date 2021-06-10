@@ -10,4 +10,21 @@ abstract class LocaleKeys {
   static const onBoard_page3_desc = 'onBoard.page3.desc';
   static const onBoard_page3 = 'onBoard.page3';
   static const onBoard = 'onBoard';
+
+  static const login_tab1 = 'login.tab1';
+  static const login_tab2 = 'login.tab2';
+  static const login_email = 'login.email';
+  static const login_password = 'login.password';
+  static const login_forgotText = 'login.forgotText';
+  static const login_login = 'login.login';
+  static const login_dontAccount = 'login.dontAccount';
+  static const login = 'login';
+
+  static const home_build_tabbar_tab1 = 'home.build.tabbar.tab1';
+  static const home_build_tabbar_tab2 = 'home.build.tabbar.tab2';
+  static const home_build_tabbar_tab3 = 'home.build.tabbar.tab3';
+  static const home_build_tabbar_tab4 = 'home.build.tabbar.tab4';
+  static const home_build_tabbar = 'home.build.tabbar';
+
+  static const home_build_subTitle = 'home.build.subTitle';
 }
