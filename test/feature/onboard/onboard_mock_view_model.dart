@@ -1,5 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:mvvm_flutter/core/constants/enums/http_request_enum.dart';
+import 'package:mvvm_flutter/core/constants/enums/locale_keys_enum.dart';
+import 'package:mvvm_flutter/core/constants/navigation/navigator_constants.dart';
+import 'package:mvvm_flutter/core/init/cache/locale_manager.dart';
+import 'package:mvvm_flutter/core/init/navigation/navigation_service.dart';
 import 'package:mvvm_flutter/core/init/network/core_dio.dart';
 import 'package:mvvm_flutter/view/authenticate/onboard/model/on_board_model.dart';
 import 'package:mvvm_flutter/core/init/network/icore_dio.dart';
@@ -20,10 +24,10 @@ class OnBoardMockViewModel implements OnBoardViewModel {
   bool isLoading = false;
 
   @override
-  late int currentPageIndex;
+  late int currentIndex;
 
   @override
-  late List<OnBoardModel> onBoardModel;
+  late List<OnBoardModel> onBoardItems = [];
 
   @override
   void init() {
@@ -33,8 +37,8 @@ class OnBoardMockViewModel implements OnBoardViewModel {
   }
 
   @override
-  void onPageChanged(int value) {
-    currentPageIndex = value;
+  void changeCurrentIndex(int value) {
+    currentIndex = value;
   }
 
   Future<void> onBoardGetModels() async {
@@ -42,8 +46,12 @@ class OnBoardMockViewModel implements OnBoardViewModel {
         type: HttpTypes.GET, parseModel: PostModel());
 
     if (response.data is List) {
-      onBoardModel = response.data!
-          .map((e) => OnBoardModel(stringHelper.toUpper(e.title!)))
+      onBoardItems = response.data!
+          .map((e) => OnBoardModel(
+                stringHelper.toUpper(e.title!),
+                e.imagePath!,
+                e.description!,
+              ))
           .toList()
           .cast<OnBoardModel>();
     }
@@ -57,6 +65,26 @@ class OnBoardMockViewModel implements OnBoardViewModel {
 
   @override
   void setContext(BuildContext context) {}
+
+  @override
+  late LocaleManager localeManager;
+
+  @override
+  late NavigationService navigationService;
+
+  @override
+  void changeLoading() {
+    isLoading = !isLoading;
+  }
+
+  @override
+  Future<void> completeToOnBoard() async {
+    changeLoading();
+    await localeManager.setBoolValue(PreferencesKeys.IS_FIRST_APP, true);
+    changeLoading();
+
+    navigationService.navigatorToPageClear(path: NavigatorConstants.TEST_VIEW);
+  }
 }
 
 abstract class IStringHelper {

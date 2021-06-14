@@ -7,9 +7,9 @@ import 'package:mvvm_flutter/core/init/navigation/navigation_service.dart';
 import 'package:mvvm_flutter/core/init/navigation/navigator_route.dart';
 import 'package:mvvm_flutter/core/init/notifer/provider_list.dart';
 import 'package:mvvm_flutter/core/init/notifer/theme_notifer.dart';
+import 'package:mvvm_flutter/view/authenticate/home/build/feed/view/build_feed_view.dart';
+import 'package:mvvm_flutter/view/authenticate/home/social/view/social_view.dart';
 import 'package:mvvm_flutter/view/authenticate/login/view/login_view.dart';
-import 'package:mvvm_flutter/view/authenticate/onboard/view/on_board_view.dart';
-import 'package:mvvm_flutter/view/authenticate/test/view/test_view.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -20,6 +20,7 @@ void main() async {
       child: MyApp(),
       supportedLocales: LanguageManager.instance.supportLocales,
       path: ApplicationConstants.LANG_ASSET_PATH,
+      startLocale: LanguageManager.instance.enLocale,
     ),
   ));
 }
@@ -37,7 +38,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeNotifer>(context, listen: false).currentTheme,
-      home: OnBoardView(),
+      home: SocialView(),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       onGenerateRoute: NavigatorRoute.instance.generateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,
     );

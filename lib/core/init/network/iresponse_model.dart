@@ -4,7 +4,8 @@ abstract class IResponseModel<T> {
 }
 
 abstract class IErrorModel<T> {
-  void statusCode() {}
+  int? statusCode;
+  String? description;
 }
 
 class ResponseModel<T> extends IResponseModel<T> {
