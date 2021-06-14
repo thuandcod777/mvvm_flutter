@@ -27,7 +27,7 @@ class OnBoardMockViewModel implements OnBoardViewModel {
   late int currentIndex;
 
   @override
-  late List<OnBoardModel> onBoardItems;
+  late List<OnBoardModel> onBoardItems = [];
 
   @override
   void init() {
@@ -48,7 +48,10 @@ class OnBoardMockViewModel implements OnBoardViewModel {
     if (response.data is List) {
       onBoardItems = response.data!
           .map((e) => OnBoardModel(
-              stringHelper.toUpper(e.title!), e.description!, e.imagePath!))
+                stringHelper.toUpper(e.title!),
+                e.imagePath!,
+                e.description!,
+              ))
           .toList()
           .cast<OnBoardModel>();
     }

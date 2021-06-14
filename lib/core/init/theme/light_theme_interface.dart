@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:mvvm_flutter/core/init/theme/light/color_scheme_light.dart';
 import 'package:mvvm_flutter/core/init/theme/light/padding_insets.dart';
 import 'package:mvvm_flutter/core/init/theme/light/text_theme_light.dart';

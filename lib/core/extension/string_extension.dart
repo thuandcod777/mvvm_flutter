@@ -8,4 +8,7 @@ extension StringLocalization on String {
       this.contains(RegExp(ApplicationConstants.EMAIL_REGEX))
           ? null
           : "Email does not valid";
+
+  bool get isValidEmails =>
+      RegExp(ApplicationConstants.EMAIL_REGEX).hasMatch(this);
 }

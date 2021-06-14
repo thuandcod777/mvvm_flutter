@@ -38,7 +38,7 @@ main() {
   });
 
   group("Test All", () {
-    int index = 00;
+    int index = 0;
     test("onBoard Get Models", () async {
       await mockViewModel.onBoardGetModels();
       mockViewModel.currentIndex = mockViewModel.onBoardItems.length;
