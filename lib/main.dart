@@ -7,10 +7,8 @@ import 'package:mvvm_flutter/core/init/navigation/navigation_service.dart';
 import 'package:mvvm_flutter/core/init/navigation/navigator_route.dart';
 import 'package:mvvm_flutter/core/init/notifer/provider_list.dart';
 import 'package:mvvm_flutter/core/init/notifer/theme_notifer.dart';
+import 'package:mvvm_flutter/view/authenticate/home/build/feed/view/build_feed_view.dart';
 import 'package:mvvm_flutter/view/authenticate/login/view/login_view.dart';
-import 'package:mvvm_flutter/view/authenticate/onboard/view/on_board_view.dart';
-import 'package:mvvm_flutter/view/authenticate/test/view/test_view.dart';
-import 'package:mvvm_flutter/view/home/build/feed/view/build_feed_view.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -39,7 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeNotifer>(context, listen: false).currentTheme,
-      home: LoginView(),
+      home: BuildFeedView(),
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
