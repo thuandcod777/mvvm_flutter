@@ -55,6 +55,17 @@ mixin _$BuildFeedViewModel on _BuildFeedViewModelBase, Store {
       ActionController(name: '_BuildFeedViewModelBase');
 
   @override
+  void onLikeItemPressed(String id) {
+    final _$actionInfo = _$_BuildFeedViewModelBaseActionController.startAction(
+        name: '_BuildFeedViewModelBase.onLikeItemPressed');
+    try {
+      return super.onLikeItemPressed(id);
+    } finally {
+      _$_BuildFeedViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void _changeLoading() {
     final _$actionInfo = _$_BuildFeedViewModelBaseActionController.startAction(
         name: '_BuildFeedViewModelBase._changeLoading');
