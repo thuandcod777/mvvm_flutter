@@ -38,7 +38,7 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
         .changeValue(AppThemes.DARK);
   }
 
-  @action
+  /*@action
   Future<void> getSampleRequest() async {
     isLoading = true;
     final response = await coreDio!.send<List<TestModel>, TestModel>('x',
@@ -48,5 +48,5 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
     } else {
       isLoading = false;
     }
-  }
+  }*/
 }

@@ -5,7 +5,13 @@ import 'package:vexana/vexana.dart';
 
 class VexanaManager {
   static VexanaManager? _instance;
-  static VexanaManager get instance => _instance = VexanaManager._init();
+  static VexanaManager get instance {
+    if (_instance != null) return _instance!;
+
+    _instance = VexanaManager._init();
+
+    return _instance!;
+  }
 
   VexanaManager._init();
 
