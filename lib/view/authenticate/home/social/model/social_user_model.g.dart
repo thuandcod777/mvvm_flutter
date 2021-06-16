@@ -8,7 +8,7 @@ part of 'social_user_model.dart';
 
 SocialUser _$SocialUserFromJson(Map<String, dynamic> json) {
   return SocialUser(
-    id: json['sId'] as String?,
+    id: json['_id'] as String?,
     name: json['name'] as String?,
     company: json['company'] as String?,
     image: json['image'] as String?,
@@ -17,7 +17,7 @@ SocialUser _$SocialUserFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$SocialUserToJson(SocialUser instance) =>
     <String, dynamic>{
-      'sId': instance.id,
+      '_id': instance.id,
       'name': instance.name,
       'company': instance.company,
       'image': instance.image,

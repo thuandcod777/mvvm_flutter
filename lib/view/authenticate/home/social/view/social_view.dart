@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx/mobx.dart';
 import 'package:mvvm_flutter/core/base/widget/base_widget.dart';
 import 'package:mvvm_flutter/core/init/lang/locale_keys.g.dart';
+import 'package:mvvm_flutter/core/init/network/vexana_manager.dart';
+
 import 'package:mvvm_flutter/view/_product/_widgets/animation/social_card_animation.dart';
 import 'package:mvvm_flutter/view/_product/_widgets/list_title/friend_card.dart';
-import 'package:mvvm_flutter/view/authenticate/home/social/model/social_user_model.dart';
+import 'package:mvvm_flutter/view/authenticate/home/social/service/social_service.dart';
 import 'package:mvvm_flutter/view/authenticate/home/social/viewmodel/social_view_model.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:mvvm_flutter/core/extension/context_extension.dart';
@@ -15,8 +16,11 @@ class SocialView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
     return BaseView<SocialViewModel>(
-      viewModel: SocialViewModel(),
+      viewModel: SocialViewModel(
+          SocialService(VexanaManager.instance.networkManager, scaffoldKey)),
       onModelReady: (model) {
         model.setContext(context);
         model.init();

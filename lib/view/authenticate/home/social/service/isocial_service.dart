@@ -10,7 +10,7 @@ abstract class ISocialService {
 
   ISocialService(this.manager, this.scaffoldKey);
 
-  Future<List<SocialUser>?> fetchUserHouseList(FriendQuery query);
+  Future<List<SocialUser>> fetchUserHouseList(FriendQuery query);
   Future<List<SocialUser>> fetchUserNameQuery(String text);
 
   Future<SocialUser?> fetchUser(id);
