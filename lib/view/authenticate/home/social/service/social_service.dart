@@ -9,7 +9,7 @@ import 'package:vexana/vexana.dart';
 
 class SocialService extends ISocialService with ServiceHelper {
   SocialService(INetworkManager manager, GlobalKey<ScaffoldState>? scaffoldKey)
-      : super(manager, scaffoldKey!);
+      : super(manager, scaffoldKey);
 
   @override
   Future<SocialUser?> fetchUser(id) async {
@@ -18,12 +18,12 @@ class SocialService extends ISocialService with ServiceHelper {
         parseModel: SocialUser(),
         urlSuffix: '/$id',
         method: RequestType.GET);
-    showMessage(scaffoldKey!, response.error);
+    showMessage(scaffoldKey, response.error);
     return response.data;
   }
 
   @override
-  Future<List<SocialUser>?> fetchUserHouseList(FriendQuery query) async {
+  Future<List<SocialUser>> fetchUserHouseList(FriendQuery query) async {
     final response = await manager.send<SocialUser, List<SocialUser>>(
         NetworkRoutes.FRIEND.rawValue,
         parseModel: SocialUser(),
@@ -32,7 +32,7 @@ class SocialService extends ISocialService with ServiceHelper {
           FriendQueryEnum.Q.rawValue: query.q
         },
         method: RequestType.GET);
-    showMessage(scaffoldKey!, response.error);
+    showMessage(scaffoldKey, response.error);
     return response.data ?? [];
   }
 

@@ -5,6 +5,7 @@ import 'package:mvvm_flutter/core/constants/navigation/navigator_constants.dart'
 import 'package:mvvm_flutter/core/init/cache/locale_manager.dart';
 import 'package:mvvm_flutter/core/init/navigation/navigation_service.dart';
 import 'package:mvvm_flutter/core/init/network/core_dio.dart';
+import 'package:mvvm_flutter/core/init/network/vexana_manager.dart';
 import 'package:mvvm_flutter/view/authenticate/onboard/model/on_board_model.dart';
 import 'package:mvvm_flutter/core/init/network/icore_dio.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -85,6 +86,9 @@ class OnBoardMockViewModel implements OnBoardViewModel {
 
     navigationService.navigatorToPageClear(path: NavigatorConstants.TEST_VIEW);
   }
+
+  @override
+  VexanaManager? vexanaManager;
 }
 
 abstract class IStringHelper {

@@ -21,7 +21,7 @@ class SocialUserViewDetail extends StatelessWidget {
       appBar: AppBar(),
       body: socialService.fetchUser(socialUser!.id).toBuild<SocialUser>(
           onSuccess: (data) {
-            return Center(child: Image.network(data.image!));
+            return Center(child: Image.network(data!.image!));
           },
           loadingWidget: CircularProgressIndicator(),
           notFoundWidget: Center(

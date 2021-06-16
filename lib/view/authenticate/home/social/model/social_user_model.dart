@@ -14,7 +14,7 @@ class SocialUser extends INetworkModel<SocialUser> {
   SocialUser({this.id, this.name, this.company, this.image});
 
   @override
-  SocialUser fromJson(Map<String, dynamic> json) {
+  SocialUser fromJson(Map<String, Object?> json) {
     return _$SocialUserFromJson(json);
   }
 
